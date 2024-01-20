@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+public class CDDatabase{
+
+  ArrayList<CD> data = new ArrayList<>();
+
+  public void addCD(CD a){
+    data.add(a);
+  } // adds a CD using the CD constructor
+
+  
+  public int search(String title){
+    for(int i = 0; i < data.size(); i++){
+      if(data.get(i).getTitle().equals(title)){
+        return i;
+      }
+    } 
+    return -1;
+  } // returns index of CD
+ 
+  
+  public CD removeCD(String title){
+    int i = search(title);
+    if(i == -1){
+      System.out.println("Cd does not exist");
+      return data.get(0);
+    } 
+      return data.remove(i);
+  } 
+  
+  public void info (String title){
+    int i = search(title);
+    if(i == -1){
+      System.out.println("Cd does not exist");
+    }
+      System.out.println(data.get(i).toString());
+  } // returns the info for said CD (toString())
+  
+  
+  public void info(int index){
+    System.out.println(data.get(index).toString());
+  } // returns the info for said CD (toString())
+  
+  
+  public String toString(){
+    String output = "Title" + "\t \t" + "Artist" + "\t \t" + "Genre" + "\t" + "Tracks" + "\n";
+    output += "----------------------------------------------------\n";
+    for(int i = 0; i < data.size(); i++){
+      output += data.get(i).toString() + "\n" + "----------------------------------------------------\n";
+    }
+    return output;
+  } // Prints a nice table of all CDs in the database
+} 
+
+
