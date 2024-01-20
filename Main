@@ -1,0 +1,51 @@
+public class Main{
+  public static void main(String[] args){
+    CDDatabase cds = new CDDatabase();
+
+    CD cd1 = new CD("Alone at Prom", "Tory Lanez", "RnB", 11);
+    CD cd2 = new CD("To Pimp a Butterfly", "Kendrick Lamar", "Rap", 16);
+    CD cd3 = new CD("Love Sick", "Don Toliver", "Rap", 14);
+    CD cd4 = new CD("Yeezus", "Kanye West", "Rap", 10);
+
+    cds.addCD(cd1);
+    cds.addCD(cd2);
+    cds.addCD(cd3);
+    cds.addCD(cd4);
+    System.out.println(cds.toString());
+
+    cds.removeCD("Alone at Prom");
+    System.out.println(cds.toString());
+
+    System.out.println(cds.search("Yeezus"));
+
+    cds.info("Yeezus");
+
+    cds.info(2);
+
+  }
+}
+
+/*
+Output: 
+
+Title		Artist		Genre	  Tracks
+----------------------------------------------------
+Alone at Prom	Tory Lanez	RnB	11
+----------------------------------------------------
+To Pimp a Butterfly	Kendrick Lamar	Rap	16
+----------------------------------------------------
+Love Sick	Don Toliver	Rap	14
+----------------------------------------------------
+Yeezus	Kanye West	Rap	10
+----------------------------------------------------
+ 
+Title		Artist		Genre	  Tracks
+----------------------------------------------------
+To Pimp a Butterfly	Kendrick Lamar	Rap	16
+----------------------------------------------------
+Love Sick	Don Toliver	Rap	14
+----------------------------------------------------
+Yeezus	Kanye West	Rap	10
+----------------------------------------------------
+
+*/
